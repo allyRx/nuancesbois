@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const formAction = devisForm.getAttribute('action') || window.location.pathname; // Default to current page if action is not set
 
             // Log FormData contents for debugging (optional)
-            // for (let [key, value] of formData.entries()) {
-            //     console.log(key, value);
-            // }
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
 
             fetch(formAction, {
                 method: 'POST',
                 body: formData,
-                // Headers might be needed depending on server setup, e.g.,
-                // headers: {
-                //   'X-Requested-With': 'XMLHttpRequest' // To identify AJAX requests on the server
-                // }
+                Headers might be needed depending on server setup, e.g.,
+                headers: {
+                  'X-Requested-With': 'XMLHttpRequest' // To identify AJAX requests on the server
+                }
             })
             .then(response => {
                 if (!response.ok) {
