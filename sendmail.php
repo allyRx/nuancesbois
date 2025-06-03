@@ -1,11 +1,8 @@
 <?php
-// Paramètres de destination
-$destinataire = "estalbertcontact@gmail.com"; // Remplacez par votre e-mail réel
+$destinataire = "estalbertcontact@gmail.com";
+$fromEmail = "no-reply@nuancesbois"; // ✅ À modifier avec un email réel lié à ton domaine
 
-// Vérifier que le formulaire a été soumis
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
-    // Récupération des champs (avec un minimum de sécurité)
     $demande = htmlspecialchars($_POST["f1-c0-demande_1"] ?? '');
     $nom = htmlspecialchars($_POST["f1-c0-nom_2"] ?? '');
     $telephone = htmlspecialchars($_POST["f1-c0-telephone_3"] ?? '');
@@ -14,26 +11,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $precisions = htmlspecialchars($_POST["f1-c0-precisions-_6"] ?? '');
     $rgpd = isset($_POST["rgpd-check-1"]) ? "Oui" : "Non";
 
-    // Sujet du mail
     $subject = "Formulaire de contact : $demande";
 
-    // Corps du mail
-    $message = "
-    Demande : $demande
-    Nom : $nom
-    Téléphone : $telephone
-    Email : $email
-    Adresse du chantier : $adresseChantier
-    Précisions : $precisions
-    Consentement RGPD : $rgpd
-    ";
+    $messageText = "
+Demande : $demande
+Nom : $nom
+Téléphone : $telephone
+Email : $email
+Adresse du chantier : $adresseChantier
+Précisions : $precisions
+Consentement RGPD : $rgpd
+";
 
-    // En-têtes email
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-    // Pièce jointe (optionnel)
+    // Détection de pièce jointe
     if (!empty($_FILES['f1-c0-joindre-un-fichier-_7']['tmp_name'])) {
         $file_tmp = $_FILES['f1-c0-joindre-un-fichier-_7']['tmp_name'];
         $file_name = $_FILES['f1-c0-joindre-un-fichier-_7']['name'];
@@ -42,29 +32,34 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         $boundary = md5(uniqid(time()));
 
-        $headers = "From: $email\r\n";
+        $headers = "From: Mon Site <$fromEmail>\r\n";
+        $headers .= "Reply-To: $email\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
-        $message_body = "--$boundary\r\n";
-        $message_body .= "Content-Type: text/plain; charset=\"UTF-8\"\r\n";
-        $message_body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-        $message_body .= $message . "\r\n\r\n";
+        $message = "--$boundary\r\n";
+        $message .= "Content-Type: text/plain; charset=\"UTF-8\"\r\n";
+        $message .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
+        $message .= $messageText . "\r\n\r\n";
 
-        $message_body .= "--$boundary\r\n";
-        $message_body .= "Content-Type: $file_type; name=\"$file_name\"\r\n";
-        $message_body .= "Content-Disposition: attachment; filename=\"$file_name\"\r\n";
-        $message_body .= "Content-Transfer-Encoding: base64\r\n\r\n";
-        $message_body .= $file_content . "\r\n";
-        $message_body .= "--$boundary--";
-
-        $send = mail($destinataire, $subject, $message_body, $headers);
+        $message .= "--$boundary\r\n";
+        $message .= "Content-Type: $file_type; name=\"$file_name\"\r\n";
+        $message .= "Content-Disposition: attachment; filename=\"$file_name\"\r\n";
+        $message .= "Content-Transfer-Encoding: base64\r\n\r\n";
+        $message .= $file_content . "\r\n";
+        $message .= "--$boundary--";
     } else {
-        // Envoi sans pièce jointe
-        $send = mail($destinataire, $subject, $message, $headers);
+        // Pas de pièce jointe
+        $headers = "From: Mon Site <$fromEmail>\r\n";
+        $headers .= "Reply-To: $email\r\n";
+        $headers .= "MIME-Version: 1.0\r\n";
+        $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+        $message = $messageText;
     }
 
-    // Redirection ou message de succès
+    $send = mail($destinataire, $subject, $message, $headers);
+
     if ($send) {
         echo "Message envoyé avec succès.";
     } else {
@@ -73,4 +68,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 } else {
     echo "Accès non autorisé.";
 }
-
