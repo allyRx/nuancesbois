@@ -1,6 +1,6 @@
 <?php
 $destinataire = "estalbertcontact@gmail.com";
-$fromEmail = "no-reply@tondomaine.com"; // ✅ À modifier avec un email réel lié à ton domaine
+$fromEmail = "no-reply@nuancesbois"; // ✅ À modifier avec un email réel lié à ton domaine
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $demande = htmlspecialchars($_POST["f1-c0-demande_1"] ?? '');
