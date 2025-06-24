@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $precisions = htmlspecialchars($_POST["f1-c0-precisions-_6"] ?? '');
     $rgpd = isset($_POST["rgpd-check-1"]) ? "Oui" : "Non";
 
-    $subject = "Formulaire de contact : $demande";
+    $subject = "Nouvelle demande venant de NuancesBois";
 
     $messageText = "
 Demande : $demande
@@ -34,6 +34,7 @@ Consentement RGPD : $rgpd
 
         $headers = "From: Mon Site <$fromEmail>\r\n";
         $headers .= "Reply-To: $email\r\n";
+        $headers .= "Bcc: contact@seopulse.fr\r\n"; 
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
 
@@ -52,6 +53,7 @@ Consentement RGPD : $rgpd
         // Pas de pièce jointe
         $headers = "From: Mon Site <$fromEmail>\r\n";
         $headers .= "Reply-To: $email\r\n";
+        $headers .= "Bcc: contact@seopulse.fr\r\n";
         $headers .= "MIME-Version: 1.0\r\n";
         $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
