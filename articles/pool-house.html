@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
   <meta name="description" content="Inspirez-vous d’idées et conseils d’artisans pour créer un pool house en bois sur-mesure élégant, fonctionnel et durable avec Nuances Bois et PaysaBois." />
   <title>Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</title>
-  
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -22,20 +21,34 @@
       line-height: 1.7;
       padding: 20px;
     }
- .main-content {
-      flex: 3; /* prend 3/4 de la largeur */
-    }
-     .container {
-      max-width: 900px;
+
+    .container {
+      max-width: 1100px;
       margin: auto;
       background-color: #fff;
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-    /* Sidebar à droite */
+
+    /* Conteneur image + sidebar */
+    .top-container {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .header-image {
+      flex: 3;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
     .sidebar {
-      flex: 1; /* prend 1/4 de la largeur */
+      flex: 1;
       background-color: #f0f6f0;
       padding: 20px;
       border-radius: 10px;
@@ -66,38 +79,15 @@
       font-weight: 500;
       transition: color 0.3s ease;
     }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-    }
-
-    .header-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-
-    .back-link {
-      display: inline-block;
-      margin-bottom: 20px;
+    .sidebar ul li a:hover {
       color: #446d44;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
+      text-decoration: underline;
     }
 
-    .back-link:hover {
-      text-decoration: underline;
+    /* Texte principal en dessous */
+    .main-content {
+      margin-top: 20px;
     }
 
     h1 {
@@ -118,6 +108,19 @@
       font-size: 1.05rem;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #446d44;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
     ul {
       margin-left: 20px;
       margin-bottom: 20px;
@@ -128,8 +131,12 @@
     }
 
     @media (max-width: 768px) {
-      .container {
-        padding: 20px;
+      .top-container {
+        flex-direction: column;
+      }
+
+      .header-image {
+        max-height: 250px;
       }
 
       h1 {
@@ -139,30 +146,38 @@
       h2 {
         font-size: 1.3em;
       }
-
-      .header-image {
-        max-height: 250px;
-      }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="main-content">
-        <a href="../blog.html" class="back-link">← Retour au blog</a>
+    <!-- Image + sidebar -->
+    <div class="top-container">
+      <img src="./images/house.jpg" alt="Pool house design" class="header-image" />
 
-    <img src="./images/house.jpg" alt="Pool house design" class="header-image" />
+      <aside class="sidebar">
+        <h3>Articles récents</h3>
+        <ul>
+          <li><a href="/articles/extension.html">Extension ossature bois : les avantages d’un agrandissement écologique</a></li>
+          <li><a href="/articles/bardage-bois.html">Bardage bois : quel choix d’essence pour votre façade ?</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Texte principal -->
+    <div class="main-content">
+      <a href="../blog.html" class="back-link">← Retour au blog</a>
 
     <h1>Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</h1>
 
     <p>Dans le monde de l’aménagement extérieur, imaginez un lieu où l’élégance du bois se marie à la fonctionnalité, un espace capable de sublimer votre quotidien dès l’arrivée des beaux jours : le pool house sur-mesure. Véritable prolongement de la maison, cet abri dessiné aux petits oignons transforme votre jardin en cocon de détente, un refuge raffiné où éclatent rires et décontraction.</p>
 
-    <p>Chez Nuances Bois, nous mettons à votre service notre savoir-faire et notre passion du bois pour réaliser des aménagements de qualité, durables et esthétiques. Implantés dans le Pays Basque et les Landes, nous vous accompagnons dans vos projets de pose de parquet, de bardage bois, de constructions à ossature bois et, bien sûr, de pool house. Notre approche artisanale, rigoureuse et personnalisée garantit une fabrication 100 % sur-mesure, pensée pour votre terrain, votre budget et votre style de vie.</p>
+    <p>Chez <a href="https://nuancesbois.com/">Nuances Bois</a> ,nous mettons à votre service notre savoir-faire et notre passion du bois pour réaliser des aménagements de qualité, durables et esthétiques. Implantés dans le Pays Basque et les Landes, nous vous accompagnons dans vos projets de pose de parquet, de bardage bois, de constructions à ossature bois et, bien sûr, de pool house. Notre approche artisanale, rigoureuse et personnalisée garantit une fabrication 100 % sur-mesure, pensée pour votre terrain, votre budget et votre style de vie.</p>
 
     <p>Alors, prêts à créer votre oasis personnelle ? Laissez-vous guider par nos conseils pratiques et nos astuces de pro pour réussir votre pool house 5 étoiles, sans stress ni fausses notes.</p>
 
     <h2>Choisir l’emplacement idéal pour sublimer votre pool house</h2>
-    <p>Avant même de sortir la perceuse, posez-vous cette question simple : où votre futur pool house sera-t-il le plus confortable et le plus harmonieux ? L’orientation par rapport au soleil peut sembler anecdotique, pourtant un écart de quelques degrés transforme un bain matinal en frisson glacé, tandis qu’une exposition trop longue en plein après-midi risque de surchauffer l’espace. De même, une légère pente ou une zone parfois détrempée peuvent compliquer la pose des fondations et créer des infiltrations indésirables.</p>
+    <p>Avant même de sortir la perceuse, posez-vous cette question simple : où votre futur <a href="https://nuancesbois.com/poolhouse.html">pool house</a>  sera-t-il le plus confortable et le plus harmonieux ? L’orientation par rapport au soleil peut sembler anecdotique, pourtant un écart de quelques degrés transforme un bain matinal en frisson glacé, tandis qu’une exposition trop longue en plein après-midi risque de surchauffer l’espace. De même, une légère pente ou une zone parfois détrempée peuvent compliquer la pose des fondations et créer des infiltrations indésirables.</p>
 
     <p>C’est là que Nuances Bois entre en scène. Leurs spécialistes du bois mettent à profit leur bureau d’études pour dresser un bilan précis de votre terrain. Lors d’une visite diagnostic, ils mesurent l’ensoleillement tout au long de la journée, repèrent les éventuelles zones humides et identifient l’emplacement des réseaux enterrés afin d’éviter les mauvaises surprises. L’objectif ? Imaginer un pool house qui s’intègre naturellement à votre jardin, avec un toit plat ou une légère pente, un bardage en bois chaleureux agrémenté de touches modernes en aluminium, et un positionnement qui préserve votre intimité tout en offrant une vue imprenable sur la piscine.</p>
 
@@ -193,14 +208,6 @@
 
     <a href="../blog.html" class="back-link">← Retour au blog</a>
     </div>
-     <aside class="sidebar">
-      <h3>Articles récents</h3>
-      <ul>
-        <li><a href="/articles/extension.html">Extension ossature bois : les avantages d’un agrandissement écologique</a></li>
-        <li><a href="/articles/pool-house.html">Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</a></li>
-        <!-- <li><a href="/articles/bardage-bois.html">Bardage bois : quel choix d’essence pour votre façade ?</a></li> -->
-      </ul>
-    </aside>
   </div>
 </body>
 </html>

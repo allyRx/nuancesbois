@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
-  <title>Extension ossature bois : les avantages d’un agrandissement écologique</title>
+  <title>Bardage bois : quel choix d’essence pour votre façade ?</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
@@ -22,16 +22,32 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       background-color: #fff;
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     }
-/* Sidebar à droite */
+
+    /* Conteneur image + sidebar */
+    .top-container {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 30px;
+    }
+
+    .header-image {
+      flex: 3;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
     .sidebar {
-      flex: 1; /* prend 1/4 de la largeur */
+      flex: 1;
       background-color: #f0f6f0;
       padding: 20px;
       border-radius: 10px;
@@ -62,40 +78,15 @@
       font-weight: 500;
       transition: color 0.3s ease;
     }
-    .header-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
 
-    .back-link {
-      display: inline-block;
-      margin-bottom: 20px;
+    .sidebar ul li a:hover {
       color: #446d44;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-    }
-    .container {
-      max-width: 1100px;
-      margin: auto;
-      background-color: #fff;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-
-      display: flex;
-      gap: 40px;
-      align-items: flex-start;
-    }
-    .main-content {
-      flex: 3; /* prend 3/4 de la largeur */
-    }
-
-    .back-link:hover {
       text-decoration: underline;
+    }
+
+    /* Texte principal en dessous */
+    .main-content {
+      margin-top: 20px;
     }
 
     h1 {
@@ -116,6 +107,19 @@
       font-size: 1.05rem;
     }
 
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #446d44;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
     ul {
       margin-left: 20px;
       margin-bottom: 20px;
@@ -126,8 +130,12 @@
     }
 
     @media (max-width: 768px) {
-      .container {
-        padding: 20px;
+      .top-container {
+        flex-direction: column;
+      }
+
+      .header-image {
+        max-height: 250px;
       }
 
       h1 {
@@ -137,23 +145,31 @@
       h2 {
         font-size: 1.3em;
       }
-
-      .header-image {
-        max-height: 250px;
-      }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- Image + sidebar -->
+    <div class="top-container">
+      <img src="/articles/images/bardage.jpg" alt="Bardage bois façade maison" class="header-image" />
+
+      <aside class="sidebar">
+        <h3>Articles récents</h3>
+        <ul>
+          <li><a href="/articles/bardage-bois.html">Bardage bois : quel choix d’essence pour votre façade ?</a></li>
+          <li><a href="/articles/pool-house.html">Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</a></li>
+        </ul>
+      </aside>
+    </div>
+
+    <!-- Texte principal -->
     <div class="main-content">
-        <a href="../blog.html" class="back-link">← Retour au blog</a>
+      <a href="../blog.html" class="back-link">← Retour au blog</a>
 
-    <img src="./images/extension2.jpg" alt="Extension ossature bois" class="header-image" />
+       <h1>Extension ossature bois : les avantages d’un agrandissement écologique</h1>
 
-    <h1>Extension ossature bois : les avantages d’un agrandissement écologique</h1>
-
-    <p>Un salon généreux en volume, inondé de lumière naturelle, reflète parfaitement l’harmonie entre espace et quiétude. Pourtant, bien des intérieurs souffrent d’un couloir trop étroit, d’une cuisine exiguë ou d’un séjour sans perspective. L’extension à ossature bois, prisée par architectes et particuliers, offre une réponse élégante, rapide et écologique. Léger et performant, le bois permet d’ajouter des mètres carrés tout en renforçant l’isolation thermique et en limitant l’empreinte carbone. C’est dans cet esprit durable que Nuances Bois, implanté au cœur du Pays Basque et des Landes, met son expertise artisanale au service de chaque étape du projet, de la conception sur-mesure à la pose soignée.</p>
+    <p>Un salon généreux en volume, inondé de lumière naturelle, reflète parfaitement l’harmonie entre espace et quiétude. Pourtant, bien des intérieurs souffrent d’un couloir trop étroit, d’une cuisine exiguë ou d’un séjour sans perspective. L’extension à ossature bois, prisée par architectes et particuliers, offre une réponse élégante, rapide et écologique. Léger et performant, le bois permet d’ajouter des mètres carrés tout en renforçant l’isolation thermique et en limitant l’empreinte carbone. C’est dans cet esprit durable que <a href="https://nuancesbois.com/">Nuances Bois</a> , implanté au cœur du Pays Basque et des Landes, met son expertise artisanale au service de chaque étape du projet, de la conception sur-mesure à la pose soignée.</p>
 
     <h2>Pourquoi opter pour une extension ossature bois ?</h2>
     <p>Vous vous demandez pourquoi le bois s’est imposé comme le matériau de référence pour un agrandissement de maison ? D’abord, l’ossature bois est légère et modulable, ce qui permet une construction jusqu’à 30 % plus rapide qu’une extension traditionnelle en parpaings (ADEME, 2023). Avec Nuances Bois, chaque panneau est calibré en atelier pour un assemblage millimétré, limitant déchets et poussière sur votre chantier. Côté isolation, le bois joue naturellement le rôle de bouclier thermique : vous réduisez vos besoins en chauffage et climatisation, jusqu’à 20 % d’économie sur la facture énergétique ! Et ce n’est pas du bluff marketing : les essences locales utilisées par Nuances Bois proviennent de forêts gérées durablement, garantissant une démarche écologique.</p>
@@ -163,7 +179,7 @@
     <h2>Les étapes clés de votre projet avec Nuances Bois</h2>
     <p>Démarrer un projet d’extension de maison peut sembler complexe, mais avec Nuances Bois, chaque phase devient limpide. Tout commence par une visite diagnostic : nos techniciens se rendent sur place pour analyser votre maison existante, mesurer la portance des fondations et cerner vos besoins réels en surface. Vous hésitez entre agrandir le séjour ou créer une véranda pour recevoir ? Nous discutons de votre mode de vie et de vos envies, avec un vrai dialogue de professionnel à professionnel.</p>
 
-    <p>Ensuite, place à l’avant-projet : le bureau d’études intégré élabore des plans 3D précis, où sont intégrées l’isolation, la ventilation et le positionnement des menuiseries. Vous visualisez l’extension ossature bois avant même qu’elle ne prenne forme. Les démarches administratives (déclaration préalable ou permis de construire au-delà de 40 m²) sont gérées de A à Z par notre équipe, pour vous épargner le casse-tête bureaucratique.</p>
+    <p>Ensuite, place à l’avant-projet : le bureau d’études intégré élabore des plans 3D précis, où sont intégrées l’isolation, la ventilation et le positionnement des menuiseries. Vous visualisez <a href="https://nuancesbois.com/extension.html">l’extension ossature bois</a>  avant même qu’elle ne prenne forme. Les démarches administratives (déclaration préalable ou permis de construire au-delà de 40 m²) sont gérées de A à Z par notre équipe, pour vous épargner le casse-tête bureaucratique.</p>
 
     <p>Arrive la phase chantier : les murs à ossature bois, fabriqués en atelier, sont assemblés sur site en quelques jours. Grâce à cette méthode, vous profitez d’un chantier propre et rapide, sans le va-et-vient incessant des matériaux lourds. Enfin, les finitions intérieures-pose de laine de bois, fibre de bois, revêtements muraux et sols-reflètent votre style, du parquet flottant au carrelage grand format. Grâce à Nuances Bois, chaque étape de votre agrandissement devient une expérience guidée, fluide et rassurante.</p>
 
@@ -184,15 +200,6 @@
 
     <a href="../blog.html" class="back-link">← Retour au blog</a>
     </div>
-    
-    <aside class="sidebar">
-      <h3>Articles récents</h3>
-      <ul>
-        <li><a href="/articles/extension.html">Extension ossature bois : les avantages d’un agrandissement écologique</a></li>
-        <li><a href="/articles/pool-house.html">Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</a></li>
-        <!-- <li><a href="/articles/bardage-bois.html">Bardage bois : quel choix d’essence pour votre façade ?</a></li> -->
-      </ul>
-    </aside>
   </div>
 </body>
 </html>

@@ -23,7 +23,7 @@
       padding: 20px;
     }
 
-    /* Conteneur général en flex avec sidebar */
+    /* Conteneur général */
     .container {
       max-width: 1100px;
       margin: auto;
@@ -31,20 +31,26 @@
       padding: 40px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
 
+    /* Conteneur image + aside */
+    .top-container {
       display: flex;
       gap: 40px;
       align-items: flex-start;
+      margin-bottom: 30px;
     }
 
-    /* Colonne principale */
-    .main-content {
-      flex: 3; /* prend 3/4 de la largeur */
+    .top-container .header-image {
+      flex: 3;
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
     }
 
-    /* Sidebar à droite */
     .sidebar {
-      flex: 1; /* prend 1/4 de la largeur */
+      flex: 1;
       background-color: #f0f6f0;
       padding: 20px;
       border-radius: 10px;
@@ -81,13 +87,9 @@
       text-decoration: underline;
     }
 
-    /* Image header */
-    .header-image {
-      width: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-      margin-bottom: 30px;
+    /* Texte principal en bas */
+    .main-content {
+      margin-top: 20px;
     }
 
     h1 {
@@ -107,6 +109,7 @@
       margin-bottom: 15px;
       font-size: 1.05rem;
     }
+
     .back-link {
       display: inline-block;
       margin-top: 30px;
@@ -126,13 +129,12 @@
     }
 
     @media (max-width: 991px) {
-      .container {
+      .top-container {
         flex-direction: column;
-        padding: 20px;
       }
 
       .sidebar {
-        margin-top: 40px;
+        margin-top: 20px;
       }
     }
 
@@ -145,7 +147,7 @@
         font-size: 1.2em;
       }
 
-      .header-image {
+      .top-container .header-image {
         max-height: 250px;
       }
     }
@@ -153,15 +155,26 @@
 </head>
 <body>
   <div class="container">
-    <!-- Contenu principal -->
-    <div class="main-content">
-      <a href="../blog.html" class="back-link">← Retour au blog</a>
-      <!-- 📷 Image d'en-tête -->
+    <!-- Conteneur image + aside -->
+    <div class="top-container">
       <img src="/articles/images/bardage.jpg" alt="Bardage bois façade maison" class="header-image" />
 
-      <h1>Bardage bois : quel choix d’essence pour votre façade ?</h1>
+      <aside class="sidebar">
+        <h3>Articles récents</h3>
+        <ul>
+          <li><a href="/articles/extension.html">Extension ossature bois : les avantages d’un agrandissement écologique</a></li>
+          <li><a href="/articles/pool-house.html">Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</a></li>
+        </ul>
+      </aside>
+    </div>
 
-      <p>Un bardage bois change immédiatement une maison, lui insufflant une aura chaleureuse et authentique là où le parpaing affiche son air un brin austère. Pourtant, entre douglas, mélèze et pin maritime, le vertige guette : comment s’y retrouver pour allier esthétique, robustesse et entretien simplifié ? Nuances Bois, enraciné au cœur du Pays Basque et des Landes, apporte la réponse sur-mesure. Fort d’années de pratique artisanale, ce spécialiste oriente votre choix d’essence en fonction de votre environnement, de votre budget et de votre style, tout en veillant à une approche éco-responsable. Leur bureau d’études intégré pilote chaque étape – de la visite terrain à la pose finale – pour que votre façade incarne l’âme du bois, sans que vous ayez à naviguer seul dans cette forêt d’options.</p>
+    <!-- Contenu principal en dessous -->
+    <div class="main-content">
+      <a href="../blog.html" class="back-link">← Retour au blog</a>
+
+       <h1>Bardage bois : quel choix d’essence pour votre façade ?</h1>
+
+      <p>Un bardage bois change immédiatement une maison, lui insufflant une aura chaleureuse et authentique là où le parpaing affiche son air un brin austère. Pourtant, entre douglas, mélèze et pin maritime, le vertige guette : comment s’y retrouver pour allier esthétique, robustesse et entretien simplifié ? <a href="https://nuancesbois.com/">Nuances Bois</a> , enraciné au cœur du Pays Basque et des Landes, apporte la réponse sur-mesure. Fort d’années de pratique artisanale, ce spécialiste oriente votre choix d’essence en fonction de votre environnement, de votre budget et de votre style, tout en veillant à une approche éco-responsable. Leur bureau d’études intégré pilote chaque étape – de la visite terrain à la pose finale – pour que votre façade incarne l’âme du bois, sans que vous ayez à naviguer seul dans cette forêt d’options.</p>
 
       <h2>Pourquoi le choix de l’essence de bois est déterminant ?</h2>
       <p>Le bois n’est pas inerte : il respire, se dilate, s’anime au fil des saisons. Choisir une essence inadaptée, c’est risquer un grisaillage prématuré, des fissures au premier coup de gel ou une invasion d’insectes xylophages. À l’inverse, une essence bien calibrée vous offre une tenue mécanique et esthétique qui s’épanouit avec le temps, à l’image d’un grand cru.</p>
@@ -172,7 +185,7 @@
       <p>Douglas, mélèze, pin maritime… trois champions du bardage bois, chacun avec ses spécificités. Le douglas offre un veinage fin teinté de nuances rosées, qui se patine en argenté, et supporte sans broncher les variations climatiques. Le mélèze, lui, dévoile un grain prononcé et une teinte dorée, naturellement très résistant aux champignons, et ne nécessitant qu’une lasure tous les 3 à 5 ans. Quant au pin maritime, issu des forêts des Landes, il séduit par son prix accessible et son traitement autoclave qui repousse insectes et humidité. Chez Nuances Bois, ces essences locales sont labellisées PEFC ou FSC, gage d’une gestion forestière responsable. Vous aimez les façades claire-voie ? Le douglas stable garantit des joints nets, sans risque de déformation. Vous préférez un rendu plus rustique ? Le mélèze apporte cette chaleur visuelle recherchée par les architectes contemporains.</p>
 
       <h2>Les critères pour affiner votre sélection</h2>
-      <p>Au-delà du choix de l’essence, plusieurs paramètres entrent en jeu pour définir le bardage bois adapté à votre besoin. D’abord, la durabilité naturelle : qui dit tanins protecteurs dit moins d’entretien. Ensuite, l’esthétique : veinage marqué ou texture lisse ? Là encore, les experts de Nuances Bois vous font visiter leurs réalisations pour vous montrer concrètement l’effet en situation réelle. Puis vient la question de l’entretien : préférez-vous une lasure microporeuse à renouveler tous les trois ans ou un saturateur qui nourrit sans changer la patine ? Enfin, le budget et la disponibilité : même si des essences exotiques peuvent flatter l’œil, elles pèsent sur la facture et l’empreinte carbone. Nuances Bois mise sur le bois local, gage d’un prix maîtrisé et d’un transport limité. En prenant en compte ces aspects, vous vous assurez d’un bardage à la fois beau, solide et facile à vivre.</p>
+      <p>Au-delà du choix de l’essence, plusieurs paramètres entrent en jeu pour définir le <a href="https://nuancesbois.com/bardage.html">bardage bois</a>   adapté à votre besoin. D’abord, la durabilité naturelle : qui dit tanins protecteurs dit moins d’entretien. Ensuite, l’esthétique : veinage marqué ou texture lisse ? Là encore, les experts de Nuances Bois vous font visiter leurs réalisations pour vous montrer concrètement l’effet en situation réelle. Puis vient la question de l’entretien : préférez-vous une lasure microporeuse à renouveler tous les trois ans ou un saturateur qui nourrit sans changer la patine ? Enfin, le budget et la disponibilité : même si des essences exotiques peuvent flatter l’œil, elles pèsent sur la facture et l’empreinte carbone. Nuances Bois mise sur le bois local, gage d’un prix maîtrisé et d’un transport limité. En prenant en compte ces aspects, vous vous assurez d’un bardage à la fois beau, solide et facile à vivre.</p>
 
       <h2>La pose réussie, l’expertise Nuances Bois</h2>
       <p>Un beau bois mal posé perd de son éclat et de sa performance. C’est pourquoi Nuances Bois a formé ses artisans aux gestes techniques essentiels :</p>
@@ -191,26 +204,16 @@
 
       <h2>Conseils pour un entretien durable</h2>
       <p>Un bardage bois bien choisi et posé par un professionnel reste facile à entretenir. Nuances Bois recommande :</p>
-      <ul>
+      <ol>
         <li>Au printemps et à l’automne, un nettoyage à l’eau douce, basse pression, pour dépoussiérer pollen et saletés.</li>
         <li>Tous les 3 à 5 ans, appliquer une lasure microporeuse ou une huile naturelle sans solvant, pour protéger le bois des UV et de l’humidité.</li>
         <li>Contrôler annuellement l’état des joints d’étanchéité autour des fenêtres et des seuils, afin de prévenir les infiltrations.</li>
         <li>Observer le patinage naturel : si vous optez pour le grisé, laissez le bois vieillir sans traitement ; sinon, rajeunissez la teinte avec un saturateur adapté.</li>
-      </ul>
+      </ol>
       <p>Cerise sur le gâteau, Nuances Bois propose un contrat d’entretien personnalisé, incluant visites de contrôle et retouches de finition, pour que votre bardage reste éclatant, année après année.</p>
 
       <a href="../blog.html" class="back-link">← Retour au blog</a>
     </div>
-
-    <!-- Sidebar droite -->
-    <aside class="sidebar">
-      <h3>Articles récents</h3>
-      <ul>
-        <li><a href="/articles/extension.html">Extension ossature bois : les avantages d’un agrandissement écologique</a></li>
-        <li><a href="/articles/pool-house.html">Pool house sur-mesure : des inspirations pour un espace détente 5 étoiles</a></li>
-        <!-- <li><a href="/articles/bardage-bois.html">Bardage bois : quel choix d’essence pour votre façade ?</a></li> -->
-      </ul>
-    </aside>
   </div>
 </body>
 </html>
